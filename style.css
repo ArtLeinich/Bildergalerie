@@ -1,0 +1,164 @@
+/* Grundlegende Stile bleiben unverändert */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    text-align: center; /* Überschriften zentrieren */
+}
+
+/* Stile für das Formular */
+form {
+    display: flex;
+    justify-content: center; /* Inhalt horizontal zentrieren */
+   
+    align-items: center; /* Horizontale Zentrierung */
+    margin-bottom: 20px;
+}
+
+/* Stil für die Dateiauswahl (Input) */
+#imageInput {
+    margin-bottom: 10px; /* Abstand unten hinzufügen */
+}
+
+/* Stile für die Galerie */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Bilder in Zeilen umschlagen */
+    justify-content: center; /* Inhalt zentrieren */
+    gap: 15px; /* Abstand zwischen den Elementen */
+}
+
+/* Stile für Galerie-Elemente */
+.gallery-item {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Schattierung */
+    transition: transform 0.6s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02); /* Vergrößerung bei Hover */
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Stil für Bilder in der Galerie */
+.gallery-image {
+    width: 100%; /* Bildbreite 100% des Containers */
+    height: auto;
+    max-width: 300px; /* Maximale Bildbreite */
+    border-radius: 5px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger anzeigen */
+}
+
+/* Stile für die Buttons */
+.upload-button, .delete-button {
+    background-color: #4CAF50; /* Grüne Farbe für den Upload-Button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px; /* Abgerundete Ecken */
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px; /* Abstand links und rechts hinzufügen */
+}
+
+.upload-button:hover {
+    background-color: #45a049; /* Dunkleres Grün bei Hover */
+    transform: scale(1.05); /* Vergrößerung des Buttons bei Hover */
+}
+
+.delete-button {
+    background-color: #ff4d4d; /* Rote Farbe für den Lösch-Button */
+}
+
+.delete-button:hover {
+    background-color: #e60000; /* Dunkleres Rot bei Hover */
+}
+
+#previewContainer {
+    margin-top: 20px; /* Abstand nach oben */
+    text-align: center; /* Vorschau-Bild zentrieren */
+}
+
+#previewContainer img {
+    max-width: 100%; /* Maximalbreite des Bildes auf 100% des Containers setzen */
+    height: auto; /* Automatische Höhe */
+    border: 2px solid #ddd; /* Rahmen um das Bild */
+    border-radius: 5px; /* Abgerundete Ecken */
+}
+
+
+
+/* Modal-Stile */
+.modal {
+    display: none; /* Modal standardmäßig ausblenden */
+    position: fixed; /* Position fixieren, um das Modal zu überlagern */
+    z-index: 1; /* Über anderen Elementen anzeigen */
+    left: 0;
+    top: 0;
+    width: 100%; /* Volle Breite */
+    height: 100%; /* Volle Höhe */
+    background-color: rgba(0,0,0,0.9); /* Dunkler Hintergrund mit Transparenz */
+    
+    display: flex; /* Flexbox verwenden für Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    /* Modal bleibt ausgeblendet, bis es durch das Skript geöffnet wird */
+}
+
+/* Modal-Inhalt */
+.modal-content {
+    margin: auto; /* Automatisch zentrieren */
+    display: block; /* Blockanzeige für das Bild */
+    width: 80%; /* Maximale Breite des Bildes im Modal */
+    max-width: 700px; /* Begrenzung der maximalen Breite */
+}
+
+.close {
+    position: absolute; /* Absolut positionieren für die Schließschaltfläche */
+    top: 15px; /* Abstand von oben */
+    right: 35px; /* Abstand von rechts */
+    color: #f1f1f1; /* Farbe der Schaltfläche */
+    font-size: 40px; /* Schriftgröße */
+    font-weight: bold; /* Fettschrift */
+    transition: color 0.3s; /* Übergang für die Farbe */
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb; /* Farbe beim Hover */
+    text-decoration: none; /* Keine Unterstreichung */
+    cursor: pointer; /* Zeiger anzeigen */
+}
+
+.close:hover {
+    transform: scale(1.1); /* Vergrößern der Schließschaltfläche bei Hover */
+}
+
+/* Responsive Stile für mobile Geräte */
+@media (max-width: 600px) {
+    form {
+        flex-direction: column; /* Auf mobilen Geräten vertikale Anordnung der Elemente */
+        padding: 0 20px; /* Abstand links und rechts hinzufügen */
+    }
+
+    .upload-button, .delete-button {
+        width: 100%; /* Buttons auf 100% der Breite setzen */
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px; /* Abstand oben hinzufügen */
+    }
+
+    .gallery-item {
+        width: 100%; /* Galerie-Elemente über die gesamte Breite auf kleinen Bildschirmen */
+    }
+}
