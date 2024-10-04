@@ -14,7 +14,7 @@ Technologien
  - CSS
  - JavaScript
  - PHP
- - MySQL (optional, wenn Sie eine Datenbank für Benutzerbilder verwenden möchten)
+ 
 
 Verwendung
    - Wählen Sie ein Bild von Ihrem Gerät aus.
